@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Poderosa Modas - Elegância, estilo e poder em cada look. Moda feminina premium com looks exclusivos e tendências que valorizam sua autoestima.">
+<meta name="keywords" content="moda feminina, roupas femininas, looks exclusivos, moda premium, Poderosa Modas">
+<meta property="og:title" content="Poderosa Modas | Elegância & Estilo">
+<meta property="og:description" content="Elegância, estilo e poder em cada look. Descubra a moda que transforma.">
+<meta property="og:type" content="website">
+<title>Poderosa Modas | Elegância & Estilo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #2a1020;
+    --white: #fff5f7;
+    --gold: #c9a84c;
+    --gold-light: #e8d49e;
+    --gold-dark: #9a7a2e;
+    --rose: #f9e4ea;
+    --rose-mid: #f0bfce;
+    --rose-deep: #d4849e;
+    --rose-dark: #9c3f5a;
+    --rose-text: #7a2d45;
+    --cream: #fdf0f3;
+    --gray-light: #f0dde3;
+    --gray-mid: #b08898;
+    --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: 0.25s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ───── SCROLLBAR ───── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--rose); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ───── NAVBAR ───── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 1.2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+  }
+  nav.scrolled {
+    background: rgba(156,63,90,0.97);
+    box-shadow: 0 1px 30px rgba(201,168,76,0.25);
+    padding: 0.8rem 3rem;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex; gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(250,250,248,0.8);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color var(--transition-fast);
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 0;
+    transition: background var(--transition-fast), color var(--transition-fast) !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: var(--transition-fast); }
+
+  /* ───── HERO ───── */
+  #hero {
+    position: relative;
+    height: 100vh; min-height: 700px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: var(--rose-dark);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(156,63,90,0.88) 0%, rgba(42,16,32,0.55) 60%, rgba(201,168,76,0.12) 100%),
+      url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1800&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 12s ease-out forwards;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to   { transform: scale(1); }
+  }
+  .hero-ornament {
+    position: absolute;
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+  }
+  .hero-ornament-1 { width: 600px; height: 600px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .hero-ornament-2 { width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%,-50%); animation-direction: reverse; animation-duration: 20s; }
+  @keyframes rotate { to { transform: translate(-50%,-50%) rotate(360deg); } }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+    animation: fadeInUp 1.2s ease 0.3s both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-pretitle {
+    font-size: 0.65rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.6s both;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 10vw, 7.5rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.8s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-weight: 300;
+    color: rgba(250,250,248,0.75);
+    letter-spacing: 0.06em;
+    margin: 1.5rem 0 2.5rem;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeInUp 1s ease 1s both;
+  }
+  .hero-divider {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 1.1s both;
+  }
+  .hero-buttons {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1s ease 1.2s both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem 2.2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--gold);
+    box-shadow: 0 0 30px rgba(201,168,76,0.3);
+    transform: translateY(-2px);
+  }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2.2rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(250,250,248,0.4);
+    transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  }
+  .btn-secondary:hover {
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+    animation: bounce 2s ease infinite;
+    opacity: 0;
+    animation: fadeIn 1s ease 2s both, bounce 2s ease 3s infinite;
+  }
+  .hero-scroll span {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(250,250,248,0.5);
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s ease infinite;
+  }
+  @keyframes scrollLine {
+    0%,100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.5); opacity: 0.5; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ───── MARQUEE ───── */
+  .marquee-section {
+    background: var(--rose-deep);
+    padding: 0.9rem 0;
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex; gap: 3rem;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-track span {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .marquee-dot { color: var(--gold-light); opacity: 0.9; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ───── SECTIONS SHARED ───── */
+  section { position: relative; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-dark);
+  }
+  .gold-line {
+    width: 50px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 2rem;
+  }
+  .gold-line.left { margin: 0 0 2rem; }
+
+  /* ───── SOBRE ───── */
+  #sobre {
+    background: var(--cream);
+    padding: 8rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .sobre-image-wrap {
+    position: relative;
+  }
+  .sobre-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+  .sobre-img-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background:
+      linear-gradient(135deg, rgba(212,132,158,0.2), rgba(201,168,76,0.12)),
+      url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80') center/cover;
+    display: block;
+    position: relative;
+  }
+  .sobre-badge {
+    position: absolute;
+    bottom: -2rem; right: -2rem;
+    width: 120px; height: 120px;
+    background: var(--rose-dark);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 2px;
+  }
+  .sobre-badge strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .sobre-badge span {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: rgba(250,250,248,0.6);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .sobre-content p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 1.4rem;
+  }
+  .sobre-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rose-mid);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold-dark);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  /* ───── DESTAQUES ───── */
+  #destaques {
+    padding: 8rem 3rem;
+    background: var(--rose);
+    text-align: center;
+  }
+  .destaques-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .destaque-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    cursor: pointer;
+    group: true;
+  }
+  .destaque-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition);
+  }
+  .destaque-card:hover .destaque-bg { transform: scale(1.08); }
+  .destaque-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.1) 60%, transparent 100%);
+    transition: background var(--transition);
+  }
+  .destaque-card:hover .destaque-overlay {
+    background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.4) 70%, rgba(201,168,76,0.05) 100%);
+  }
+  .destaque-body {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 2rem 1.5rem;
+    transform: translateY(10px);
+    transition: transform var(--transition);
+  }
+  .destaque-card:hover .destaque-body { transform: translateY(0); }
+  .destaque-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .destaque-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .destaque-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity var(--transition), transform var(--transition);
+    transition-delay: 0.1s;
+  }
+  .destaque-card:hover .destaque-sub { opacity: 1; transform: translateY(0); }
+  .destaque-border {
+    position: absolute; top: 1rem; left: 1rem; right: 1rem; bottom: 1rem;
+    border: 1px solid rgba(201,168,76,0);
+    transition: border-color var(--transition);
+    pointer-events: none;
+  }
+  .destaque-card:hover .destaque-border { border-color: rgba(201,168,76,0.6); }
+
+  /* ───── GALERIA ───── */
+  #galeria {
+    padding: 8rem 3rem;
+    background: var(--rose-dark);
+  }
+  #galeria .section-title { color: var(--white); }
+  #galeria .section-tag { color: var(--gold-light); }
+  .galeria-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px;
+    gap: 1rem;
+  }
+  .galeria-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--rose-mid);
+  }
+  .galeria-item.tall { grid-row: span 2; }
+  .galeria-item.wide { grid-column: span 2; }
+  .galeria-img {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .galeria-item:hover .galeria-img { transform: scale(1.08); }
+  .galeria-hover {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(156,63,90,0.65));
+    opacity: 0;
+    transition: opacity var(--transition);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .galeria-item:hover .galeria-hover { opacity: 1; }
+  .galeria-tag {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background: var(--gold);
+    color: var(--rose-dark);
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: opacity var(--transition), transform var(--transition);
+  }
+  .galeria-item:hover .galeria-tag { opacity: 1; transform: translateY(0); }
+  .galeria-view {
+    width: 50px; height: 50px;
+    border: 1px solid rgba(201,168,76,0.8);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: opacity var(--transition), transform var(--transition), background var(--transition-fast);
+    transition-delay: 0.05s;
+  }
+  .galeria-item:hover .galeria-view { opacity: 1; transform: scale(1); }
+  .galeria-view:hover { background: rgba(201,168,76,0.2); }
+
+  /* ───── DEPOIMENTOS ───── */
+  #depoimentos {
+    padding: 8rem 3rem;
+    background: var(--cream);
+    text-align: center;
+    overflow: hidden;
+  }
+  .depo-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .depo-card {
+    background: var(--white);
+    padding: 2.5rem;
+    position: relative;
+    border: 1px solid var(--rose-mid);
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    text-align: left;
+  }
+  .depo-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(212,132,158,0.2);
+  }
+  .depo-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--rose-deep);
+    line-height: 0.5;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  .depo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  .depo-footer {
+    display: flex; align-items: center; gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rose-mid);
+  }
+  .depo-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--rose-deep);
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .depo-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+  .depo-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; }
+
+  /* ───── CTA FINAL ───── */
+  #cta {
+    padding: 10rem 3rem;
+    background: var(--rose-dark);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.15) 0%, transparent 70%),
+      url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover no-repeat;
+    opacity: 0.2;
+  }
+  .cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  #cta .section-title { color: var(--white); font-size: clamp(2.5rem, 6vw, 4.5rem); }
+  #cta .section-tag { color: var(--gold); }
+  .cta-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(250,250,248,0.65);
+    margin: 1.5rem 0 3rem;
+  }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: #25D366;
+    color: #fff;
+    padding: 1.1rem 2.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #25D366;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .btn-whatsapp:hover {
+    background: #128C7E;
+    border-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(37,211,102,0.3);
+  }
+  .btn-instagram {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: transparent;
+    color: var(--white);
+    padding: 1.1rem 2.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(250,250,248,0.4);
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+  .btn-instagram:hover {
+    border-color: var(--white);
+    transform: translateY(-3px);
+  }
+  .btn-icon { font-size: 1.1rem; }
+
+  /* ───── FOOTER ───── */
+  footer {
+    background: var(--rose-dark);
+    border-top: 1px solid rgba(201,168,76,0.3);
+    padding: 4rem 3rem 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 2rem;
+  }
+  .footer-brand .nav-logo {
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+  }
+  .footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: rgba(255,240,243,0.6);
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+  .footer-social {
+    display: flex; gap: 1rem;
+  }
+  .social-btn {
+    width: 40px; height: 40px;
+    border: 1px solid rgba(201,168,76,0.4);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+  }
+  .social-btn:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.8rem; }
+  .footer-col ul li a {
+    color: rgba(255,240,243,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color var(--transition-fast);
+  }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p {
+    font-size: 0.75rem;
+    color: rgba(255,240,243,0.35);
+    letter-spacing: 0.05em;
+  }
+  .footer-bottom a {
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+
+  /* ───── WHATSAPP FLOAT ───── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    z-index: 999;
+    width: 60px; height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 30px rgba(37,211,102,0.4);
+    text-decoration: none;
+    animation: floatPulse 2.5s ease infinite;
+    transition: transform var(--transition-fast);
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes floatPulse {
+    0%,100% { box-shadow: 0 6px 30px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 6px 50px rgba(37,211,102,0.6); }
+  }
+
+  /* ───── REVEAL ANIMATIONS ───── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ───── MOBILE NAV ───── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(156,63,90,0.99);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color var(--transition-fast);
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close {
+    position: absolute; top: 1.5rem; right: 2rem;
+    background: none; border: none;
+    color: var(--white); font-size: 1.5rem; cursor: pointer;
+    line-height: 1;
+  }
+
+  /* ───── RESPONSIVE ───── */
+  @media (max-width: 1024px) {
+    .destaques-grid { grid-template-columns: repeat(2, 1fr); }
+    .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+    .galeria-item.wide { grid-column: span 1; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.7rem 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    #sobre { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    .sobre-badge { bottom: -1rem; right: -0.5rem; width: 90px; height: 90px; }
+    .sobre-badge strong { font-size: 1.6rem; }
+    #destaques, #depoimentos { padding: 5rem 1.5rem; }
+    .destaques-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    #galeria { padding: 5rem 1.5rem; }
+    .galeria-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .galeria-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+    .galeria-item.tall { grid-row: span 1; }
+    .depo-track { grid-template-columns: 1fr; }
+    #cta { padding: 6rem 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2rem; }
+    footer { padding: 3rem 1.5rem 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .destaques-grid { grid-template-columns: 1fr; }
+    .galeria-grid { grid-template-columns: 1fr; }
+    .hero-ornament { display: none; }
+    .sobre-stats { grid-template-columns: 1fr 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Poderosa <em style="color:var(--gold)">Modas</em></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#destaques">Coleções</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#depoimentos">Clientes</a></li>
+    <li><a href="https://wa.me/5514998843707" target="_blank" class="nav-cta">Comprar</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#sobre" onclick="closeMobile()">Sobre</a>
+  <a href="#destaques" onclick="closeMobile()">Coleções</a>
+  <a href="#galeria" onclick="closeMobile()">Galeria</a>
+  <a href="#depoimentos" onclick="closeMobile()">Clientes</a>
+  <a href="https://wa.me/5514998843707" target="_blank">Comprar no WhatsApp</a>
+  <a href="https://instagram.com/poderosamodas__" target="_blank">@poderosamodas__</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ornament hero-ornament-1"></div>
+  <div class="hero-ornament hero-ornament-2"></div>
+  <div class="hero-content">
+    <p class="hero-pretitle">Bem-vinda à</p>
+    <h1 class="hero-title">Poderosa<br><em>Modas</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Elegância, estilo e poder em cada look.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5514998843707" target="_blank" class="btn-primary">
+        <span class="btn-icon">💬</span> Fale Conosco
+      </a>
+      <a href="https://instagram.com/poderosamodas__" target="_blank" class="btn-secondary">
+        <span class="btn-icon">📸</span> Instagram
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Moda Feminina</span><span class="marquee-dot">✦</span>
+    <span>Looks Exclusivos</span><span class="marquee-dot">✦</span>
+    <span>Tendências</span><span class="marquee-dot">✦</span>
+    <span>Estilo & Elegância</span><span class="marquee-dot">✦</span>
+    <span>Autoestima</span><span class="marquee-dot">✦</span>
+    <span>Novidades</span><span class="marquee-dot">✦</span>
+    <span>Poder Feminino</span><span class="marquee-dot">✦</span>
+    <span>Poderosa Modas</span><span class="marquee-dot">✦</span>
+    <!-- duplicate for seamless loop -->
+    <span>Moda Feminina</span><span class="marquee-dot">✦</span>
+    <span>Looks Exclusivos</span><span class="marquee-dot">✦</span>
+    <span>Tendências</span><span class="marquee-dot">✦</span>
+    <span>Estilo & Elegância</span><span class="marquee-dot">✦</span>
+    <span>Autoestima</span><span class="marquee-dot">✦</span>
+    <span>Novidades</span><span class="marquee-dot">✦</span>
+    <span>Poder Feminino</span><span class="marquee-dot">✦</span>
+    <span>Poderosa Modas</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-image-wrap reveal">
+    <div class="sobre-img-placeholder"></div>
+    <div class="sobre-badge">
+      <strong>5+</strong>
+      <span>Anos de<br>Moda</span>
+    </div>
+  </div>
+  <div class="sobre-content">
+    <p class="section-tag reveal">Nossa História</p>
+    <h2 class="section-title reveal reveal-delay-1">Mais que moda,<br>é <em>transformação</em>.</h2>
+    <div class="gold-line left reveal reveal-delay-2"></div>
+    <p class="reveal reveal-delay-2">A Poderosa Modas nasceu do desejo de celebrar a mulher em toda a sua essência — forte, elegante e autêntica. Acreditamos que cada roupa tem o poder de transformar não apenas seu visual, mas a forma como você se sente e enfrenta o mundo.</p>
+    <p class="reveal reveal-delay-3">Curadoria apaixonada, peças que combinam tendência e conforto, atendimento personalizado — porque você merece sentir que cada look foi criado especialmente para você.</p>
+    <div class="sobre-stats reveal reveal-delay-4">
+      <div class="stat-item">
+        <strong class="stat-num">2K+</strong>
+        <span class="stat-label">Clientes Felizes</span>
+      </div>
+      <div class="stat-item">
+        <strong class="stat-num">500+</strong>
+        <span class="stat-label">Peças Exclusivas</span>
+      </div>
+      <div class="stat-item">
+        <strong class="stat-num">100%</strong>
+        <span class="stat-label">Satisfação</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTAQUES -->
+<section id="destaques">
+  <p class="section-tag reveal">Explore</p>
+  <h2 class="section-title reveal reveal-delay-1">Nossas <em>Coleções</em></h2>
+  <div class="gold-line reveal reveal-delay-2"></div>
+  <div class="destaques-grid">
+    <div class="destaque-card reveal reveal-delay-1">
+      <div class="destaque-bg" style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80')"></div>
+      <div class="destaque-overlay"></div>
+      <div class="destaque-border"></div>
+      <div class="destaque-body">
+        <span class="destaque-icon">👗</span>
+        <h3 class="destaque-title">Moda Feminina</h3>
+        <p class="destaque-sub">Ver coleção →</p>
+      </div>
+    </div>
+    <div class="destaque-card reveal reveal-delay-2">
+      <div class="destaque-bg" style="background-image:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80')"></div>
+      <div class="destaque-overlay"></div>
+      <div class="destaque-border"></div>
+      <div class="destaque-body">
+        <span class="destaque-icon">✨</span>
+        <h3 class="destaque-title">Novidades</h3>
+        <p class="destaque-sub">Recém chegadas →</p>
+      </div>
+    </div>
+    <div class="destaque-card reveal reveal-delay-3">
+      <div class="destaque-bg" style="background-image:url('https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=600&q=80')"></div>
+      <div class="destaque-overlay"></div>
+      <div class="destaque-border"></div>
+      <div class="destaque-body">
+        <span class="destaque-icon">💎</span>
+        <h3 class="destaque-title">Looks Exclusivos</h3>
+        <p class="destaque-sub">Peças únicas →</p>
+      </div>
+    </div>
+    <div class="destaque-card reveal reveal-delay-4">
+      <div class="destaque-bg" style="background-image:url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80')"></div>
+      <div class="destaque-overlay"></div>
+      <div class="destaque-border"></div>
+      <div class="destaque-body">
+        <span class="destaque-icon">🌟</span>
+        <h3 class="destaque-title">Tendências</h3>
+        <p class="destaque-sub">Ver tendências →</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="galeria-header">
+    <div>
+      <p class="section-tag">Catálogo</p>
+      <h2 class="section-title reveal">Nossa <em style="color:var(--gold-light)">Galeria</em></h2>
+    </div>
+    <a href="https://wa.me/5514998843707" target="_blank" class="btn-primary reveal" style="margin-bottom:0.5rem">
+      Ver Tudo
+    </a>
+  </div>
+  <div class="galeria-grid">
+    <div class="galeria-item tall reveal">
+      <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80')"></div>
+      <div class="galeria-hover"><div class="galeria-view">+</div></div>
+      <span class="galeria-tag">Destaque</span>
+    </div>
+    <div class="galeria-item reveal reveal-delay-1">
+      <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80')"></div>
+      <div class="galeria-hover"><div class="galeria-view">+</div></div>
+      <span class="galeria-tag">Novo</span>
+    </div>
+    <div class="galeria-item reveal reveal-delay-2">
+      <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80')"></div>
+      <div class="galeria-hover"><div class="galeria-view">+</div></div>
+      <span class="galeria-tag">Exclusivo</span>
+    </div>
+    <div class="galeria-item wide reveal reveal-delay-1">
+      <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&q=80')"></div>
+      <div class="galeria-hover"><div class="galeria-view">+</div></div>
+      <span class="galeria-tag">Tendência</span>
+    </div>
+    <div class="galeria-item reveal reveal-delay-2">
+      <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1467043237213-65f2da53396f?w=600&q=80')"></div>
+      <div class="galeria-hover"><div class="galeria-view">+</div></div>
+      <span class="galeria-tag">Look</span>
+    </div>
+    <div class="galeria-item reveal reveal-delay-3">
+      <div class="galeria-img" style="background-image:url('https://images.unsplash.com/photo-1538329972958-465d6d2144ed?w=600&q=80')"></div>
+      <div class="galeria-hover"><div class="galeria-view">+</div></div>
+      <span class="galeria-tag">Novo</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <p class="section-tag reveal">Clientes</p>
+  <h2 class="section-title reveal reveal-delay-1">O que dizem sobre <em>nós</em></h2>
+  <div class="gold-line reveal reveal-delay-2"></div>
+  <div class="depo-track">
+    <div class="depo-card reveal reveal-delay-1">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Comprei um vestido lindo e recebi tantos elogios! A qualidade é incrível e o atendimento foi super atencioso. Já virei cliente fiel da Poderosa Modas!</p>
+      <div class="depo-footer">
+        <div class="depo-avatar">AM</div>
+        <div>
+          <p class="depo-name">Ana Maria S.</p>
+          <p class="depo-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="depo-card reveal reveal-delay-2">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Me sinto uma mulher completamente diferente com as roupas daqui. A curadoria é impecável, as peças são lindas e chegam com muito cuidado. Super recomendo!</p>
+      <div class="depo-footer">
+        <div class="depo-avatar">CF</div>
+        <div>
+          <p class="depo-name">Carolina F.</p>
+          <p class="depo-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="depo-card reveal reveal-delay-3">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Descobri a Poderosa Modas pelo Instagram e me apaixonei! Já fiz 3 pedidos e nunca me decepcionei. Atendimento pelo WhatsApp é rápido e super gentil.</p>
+      <div class="depo-footer">
+        <div class="depo-avatar">JR</div>
+        <div>
+          <p class="depo-name">Juliana R.</p>
+          <p class="depo-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="depo-card reveal reveal-delay-2">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">As roupas são de excelente qualidade e o estilo é único. Cada peça parece feita para valorizar o corpo da mulher. Minha autoestima disparou!</p>
+      <div class="depo-footer">
+        <div class="depo-avatar">PL</div>
+        <div>
+          <p class="depo-name">Patricia L.</p>
+          <p class="depo-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="depo-card reveal reveal-delay-3">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Melhor loja de moda feminina que já comprei! As fotos não fazem jus — as peças são ainda mais bonitas pessoalmente. Entregas rápidas e embalagem linda.</p>
+      <div class="depo-footer">
+        <div class="depo-avatar">FS</div>
+        <div>
+          <p class="depo-name">Fernanda S.</p>
+          <p class="depo-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="depo-card reveal reveal-delay-4">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Sempre quis ter um estilo mais sofisticado e a Poderosa Modas me ajudou a encontrar isso. São tendências que realmente combinam com o dia a dia da mulher brasileira.</p>
+      <div class="depo-footer">
+        <div class="depo-avatar">MO</div>
+        <div>
+          <p class="depo-name">Mariana O.</p>
+          <p class="depo-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-content">
+    <p class="section-tag reveal">Pronta para brilhar?</p>
+    <h2 class="section-title reveal reveal-delay-1">Seu próximo look<br><em>perfeito</em> te espera.</h2>
+    <p class="cta-text reveal reveal-delay-2">Fale com a gente pelo WhatsApp e descubra peças exclusivas que vão transformar o seu guarda-roupa. Atendimento personalizado, looks únicos e toda a elegância que você merece.</p>
+    <div class="cta-buttons reveal reveal-delay-3">
+      <a href="https://wa.me/5514998843707" target="_blank" class="btn-whatsapp">
+        <span class="btn-icon">💬</span> Falar no WhatsApp
+      </a>
+      <a href="https://instagram.com/poderosamodas__" target="_blank" class="btn-instagram">
+        <span class="btn-icon">📸</span> Seguir no Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">Poderosa <span>Modas</span></a>
+      <p class="footer-desc">Moda feminina com elegância, estilo e atitude. Cada peça selecionada com amor para valorizar a mulher em você.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/poderosamodas__" target="_blank" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/5514998843707" target="_blank" class="social-btn" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.5 21.52 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 14.24c-.19.53-.96 1.03-1.57 1.16-.42.09-.96.16-2.79-.6-2.34-.97-3.85-3.34-3.97-3.5-.11-.15-.92-1.22-.92-2.33s.58-1.65.79-1.88c.19-.21.41-.26.55-.26.14 0 .27 0 .39.01.13.01.31-.05.48.37.19.45.63 1.56.68 1.67.06.11.09.24.02.38-.07.14-.11.22-.22.34-.11.12-.23.27-.33.36-.11.1-.22.21-.1.42.13.21.56.93 1.2 1.5.82.73 1.51.96 1.72 1.07.21.11.33.09.45-.05.12-.14.51-.6.65-.8.14-.21.28-.17.47-.1.2.07 1.26.59 1.47.7.21.11.35.17.4.26.05.1.05.56-.14 1.09z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#destaques">Coleções</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5514998843707" target="_blank">📱 (14) 99884-3707</a></li>
+        <li><a href="https://instagram.com/poderosamodas__" target="_blank">📸 @poderosamodas__</a></li>
+        <li><a href="https://wa.me/5514998843707" target="_blank">💬 Fale Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <a href="#">Poderosa Modas</a>. Todos os direitos reservados.</p>
+    <p style="color:rgba(250,250,248,0.2);font-size:0.7rem">Feito com ♥ para mulheres incríveis</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5514998843707" target="_blank" class="whatsapp-float" aria-label="Contato WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.5 21.52 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.64 14.24c-.19.53-.96 1.03-1.57 1.16-.42.09-.96.16-2.79-.6-2.34-.97-3.85-3.34-3.97-3.5-.11-.15-.92-1.22-.92-2.33s.58-1.65.79-1.88c.19-.21.41-.26.55-.26.14 0 .27 0 .39.01.13.01.31-.05.48.37.19.45.63 1.56.68 1.67.06.11.09.24.02.38-.07.14-.11.22-.22.34-.11.12-.23.27-.33.36-.11.1-.22.21-.1.42.13.21.56.93 1.2 1.5.82.73 1.51.96 1.72 1.07.21.11.33.09.45-.05.12-.14.51-.6.65-.8.14-.21.28-.17.47-.1.2.07 1.26.59 1.47.7.21.11.35.17.4.26.05.1.05.56-.14 1.09z"/>
+  </svg>
+</a>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Galeria lightbox hint (simple)
+  document.querySelectorAll('.galeria-item').forEach(item => {
+    item.addEventListener('click', () => {
+      window.open('https://wa.me/5514998843707', '_blank');
+    });
+  });
+
+  // Destaque cards – link to WhatsApp
+  document.querySelectorAll('.destaque-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.open('https://wa.me/5514998843707', '_blank');
+    });
+  });
+</script>
+</body>
+</html>
